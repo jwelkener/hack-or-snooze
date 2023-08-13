@@ -1,15 +1,5 @@
 "use strict";
 
-// Select the 'all-stories-list' element and store it in the '$allStoriesList' variable
-const $allStoriesList = $('#all-stories-list');
-
-// Select the 'favorited-stories' element and store it in the '$favoritedStories' variable
-const $favoritedStories = $('#favorited-stories');
-
-// Select the 'my-stories' element and store it in the '$ownStories' variable
-
-const $ownStories = $('#my-stories');
-
 // This is the global list of the stories, an instance of StoryList
 let storyList;
 
@@ -25,11 +15,11 @@ async function getAndShowStoriesOnStart() {
 /**
  * A render method to render HTML for an individual Story instance
  * - story: an instance of Story
- *
+ * - showDeleteBtn: show delete button?
  * Returns the markup for the story.
  */
 
-function generateStoryMarkup(story) {
+function generateStoryMarkup(story, showDeleteBtn = false) {
   // console.debug("generateStoryMarkup", story);
 
   const hostName = story.getHostName();
